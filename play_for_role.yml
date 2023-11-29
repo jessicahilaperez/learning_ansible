@@ -1,0 +1,6 @@
+---
+- name: playbook for role
+  hosts: localhost
+  become: true
+  roles:
+    - ansible_role
