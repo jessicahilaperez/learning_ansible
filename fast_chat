@@ -1,0 +1,11 @@
+so the assignment was to run a chat server
+i sw this very late and the fastest and easiest way i found to do this is with netcat tool
+
+command to run on server side:
+nc -v -l ip:pport
+nc -v -l 172.17.104.168:50000
+
+command client side:
+nc -v ip:port
+nc -v 172.17.104.168:50000
+
