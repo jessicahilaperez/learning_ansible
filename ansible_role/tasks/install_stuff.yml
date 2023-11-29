@@ -1,0 +1,24 @@
+---
+- name: install git
+  apt:
+    name: git
+
+
+- name: install required system packages and docker
+  apt:
+    pkg: 
+      - apt-transport-https
+      - ca-certificates
+      - curl
+      - software-properties-common
+      - python3-pip
+      - docker.io
+    state: latest
+    update_cache: true
+
+- name: install nslookup and dig package
+  apt:
+    name: dnsutils
+    state: present
+
+

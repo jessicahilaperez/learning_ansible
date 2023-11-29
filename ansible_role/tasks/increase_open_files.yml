@@ -1,0 +1,7 @@
+---
+- name: Increase open file limit in /etc/security/limits.conf to 500000
+  pam_limits:
+    domain: "jess"
+    limit_type: hard
+    limit_item: nofile
+    value: 500000

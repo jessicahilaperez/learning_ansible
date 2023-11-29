@@ -1,0 +1,8 @@
+---
+- name: disale root ssh authentication
+  ansible.builtin.lineinfile:
+    path: /etc/ssh/sshd-config
+    regexp: '^PermitRootLogin'
+    line: 'PermitRootLogin no'
+  notify:
+    - restart sshd

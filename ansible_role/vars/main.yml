@@ -1,0 +1,21 @@
+---
+# vars file for ansible_role
+
+create_admin_info:
+  - admin_username: "adminjessica"
+  - admin_password: "pass"
+
+docker_packages:
+  - apt-transport-https
+  - ca_certificates
+  - curl
+  - software-properties-common
+  - python3-pip
+  - docker.io
+
+mount_nfs:
+  - mynfs: "192.168.0.100:/nfs/share"
+  - mountpoint: /mnt/nfs-mnt
+
+tcp_buffer:
+  - tcp_buffer_size: "1024 2000000 2000000"

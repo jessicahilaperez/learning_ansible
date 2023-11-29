@@ -1,0 +1,15 @@
+---
+- name: increase local open ports allowed
+  sysctl:
+    name: net.ipv4.ip_local_pot_range
+    value: "1024 65000"
+    state: present
+
+- name: increase read write tcp buffer with net.ipv4 parameters
+  sysctl:
+    name: "{{ item }}"
+    value: "{{ tcp_buffer[tcp_buffer_size] }}"
+    state: present
+  with_items:
+    - net.ipv4.tcp_rmem
+    - net.ipv4.tcp_wmem

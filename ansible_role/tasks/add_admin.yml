@@ -1,0 +1,7 @@
+---
+- name: add admin user
+  ansible.builtin.user:
+    name: "{{ create_admin_info[admin_username] }}"
+    password: "{{ create_admin_info[admin_password] }}"
+    shell: /bin/bash
+    groups: admin

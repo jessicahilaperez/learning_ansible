@@ -1,0 +1,19 @@
+---
+# tasks file for ansible_role
+- name: install git, docker, nslookup, dig
+  import_tasks: install_stuff.yml
+
+- name: add admin user
+  import_tasks: add_admin.yml
+
+- name: turn on SELinux
+  import_tasks: enable_SELinux.yml
+
+#- name: mount nfs directory to /mnt/nfs-mount
+ # import_tasks: mount_nfs.yml
+
+- name: increase open files limit to 50000
+  import_tasks: increase_open_files.yml
+
+- name: tcp-buffer increase open ports range 1024-65000 + increase read write memory to 2mb
+  import_tasks: increase_tcp_buffer_open_ports.yml
